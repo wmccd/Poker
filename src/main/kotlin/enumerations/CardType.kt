@@ -3,7 +3,7 @@ package enumerations
 import exceptions.Exceptions
 
 enum class CardType( val cardValue: Char) {
-    TWO( cardValue='2'),
+    TWO(cardValue='2'),
     THREE(cardValue='3'),
     FOUR(cardValue='4'),
     FIVE(cardValue='5'),
