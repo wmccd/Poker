@@ -6,7 +6,7 @@ import org.testng.annotations.Test
 import java.lang.Exception
 import java.util.concurrent.CountDownLatch
 
-class SuitTypeTest {
+class SuitTypeExceptionsTest {
 
 
     @Test
@@ -16,7 +16,7 @@ class SuitTypeTest {
         val value = 'B'
         val countDownLatch = CountDownLatch(1)
         val expectedCount = 0L
-        val expectedMessage = Exceptions.SuitType.INVALID_SUIT_TYPE
+        val expectedMessage = Exceptions.SuitTypeExceptions.INVALID_SUIT_TYPE
 
         //act
         try {

@@ -14,7 +14,7 @@ enum class SuitType(val suitValue: Char) {
             val all = "HDSC"
 
             if(!all.contains(suitValue) ){
-                throw Exception(Exceptions.SuitType.INVALID_SUIT_TYPE)
+                throw Exception(Exceptions.SuitTypeExceptions.INVALID_SUIT_TYPE)
             }
 
             return convertValueToType(suitValue)

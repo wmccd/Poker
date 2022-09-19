@@ -1,2 +1,3 @@
-Hello World!
+Spelling mistake in the input
+Royal Flush mentioned but not in the link.
 

@@ -2,8 +2,8 @@ package enumerations
 
 import exceptions.Exceptions
 
-enum class CardType(val cardValue: Char) {
-    TWO(cardValue='2'),
+enum class CardType( val cardValue: Char) {
+    TWO( cardValue='2'),
     THREE(cardValue='3'),
     FOUR(cardValue='4'),
     FIVE(cardValue='5'),
@@ -23,7 +23,7 @@ enum class CardType(val cardValue: Char) {
             val all = "23456789TAKQJ"
 
             if(!all.contains(cardValue) ){
-                throw Exception(Exceptions.CardType.INVALID_CARD_TYPE)
+                throw Exception(Exceptions.CardTypeExceptions.INVALID_CARD_TYPE)
             }
 
             return convertValueToType(cardValue)

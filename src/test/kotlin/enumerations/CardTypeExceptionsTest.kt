@@ -6,7 +6,7 @@ import org.testng.annotations.Test
 import java.lang.Exception
 import java.util.concurrent.CountDownLatch
 
-class CardTypeTest {
+class CardTypeExceptionsTest {
 
     @Test
     fun convertFromValue_invalid_exception(){
@@ -15,7 +15,7 @@ class CardTypeTest {
         val value = 'B'
         val countDownLatch = CountDownLatch(1)
         val expectedCount = 0L
-        val expectedMessage = Exceptions.CardType.INVALID_CARD_TYPE
+        val expectedMessage = Exceptions.CardTypeExceptions.INVALID_CARD_TYPE
 
         //act
         try {

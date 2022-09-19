@@ -14,18 +14,18 @@ class PokerHandCreator {
         private const val RAW_STRING_LENGTH = 14
     }
 
-    fun tryGenerate(rawStringHand: String): PokerHand{
-        return convertToPokerHand(rawStringHand)
+    fun tryGenerate(rawHand: String): PokerHand{
+        return convertToPokerHand(rawHand)
     }
 
-    private fun convertToPokerHand(rawStringHand: String): PokerHand{
+    private fun convertToPokerHand(rawHand: String): PokerHand{
 
-        if(rawStringHand.length != RAW_STRING_LENGTH){
-            throw Exception("${Exceptions.PokerHand.INVALID_HAND}<$rawStringHand>")
+        if(rawHand.length != RAW_STRING_LENGTH){
+            throw Exception("${Exceptions.PokerHandExceptions.INVALID_HAND}<$rawHand>")
         }
 
         val pokerCards = hashSetOf<PokerCard>()
-        val list = rawStringHand.split(SPLITTER)
+        val list = rawHand.split(SPLITTER)
         list.forEach {
             pokerCards.add(
                  convertToPokerCard(rawStringCard = it)
@@ -33,7 +33,7 @@ class PokerHandCreator {
         }
 
         if(pokerCards.size < PokerConstants.PokerHand.CARD_IN_A_HAND){
-            throw Exception("${Exceptions.PokerHand.INVALID_HAND}<$rawStringHand>")
+            throw Exception("${Exceptions.PokerHandExceptions.INVALID_HAND}<$rawHand>")
         }
 
         return PokerHand(pokerCards)
@@ -50,7 +50,7 @@ class PokerHandCreator {
                 suitType = suitType
             )
         }catch(ex: Exception){
-            throw Exception("${Exceptions.PokerHand.INVALID_CARD}<$rawStringCard>")
+            throw Exception("${Exceptions.PokerHandExceptions.INVALID_CARD}<$rawStringCard>")
         }
     }
 

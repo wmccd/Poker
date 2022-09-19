@@ -16,10 +16,10 @@ class FileReader {
                     lineList.add(element = it.trim())
                 }
         }catch(ex:Exception){
-            throw Exception("${Exceptions.File.FILE_DOES_NOT_EXIST}<$filename>" )
+            throw Exception("${Exceptions.FileExceptions.FILE_DOES_NOT_EXIST}<$filename>" )
         }
         when(lineList.size){
-            0 -> throw Exception("${Exceptions.File.FILE_IS_EMPTY}<$filename>")
+            0 -> throw Exception("${Exceptions.FileExceptions.FILE_IS_EMPTY}<$filename>")
         }
 
         return lineList
