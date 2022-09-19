@@ -6,13 +6,24 @@ import org.testng.annotations.Test
 class RegularExpressionsTest {
 
     @Test
+    fun pokerHand_constant_correct() {
+
+        //assemble
+        val expected = "^[2-9,T,J,Q,K,A][H,D,S,C][ ][2-9,T,J,Q,K,A][H,D,S,C][ ][2-9,T,J,Q,K,A][H,D,S,C][ ][2-9,T,J,Q,K,A][H,D,S,C][ ][2-9,T,J,Q,K,A][H,D,S,C]$"
+
+        //act
+        //assert
+        Assert.assertEquals(RegularExpressions.POKER_HAND, expected)
+    }
+
+
+    @Test
     fun pokerHand_validCombinations_valid(){
 
         //assemble
         val regex = RegularExpressions.POKER_HAND.toRegex()
 
         //act
-
         //assert
         Assert.assertTrue(regex.matches("2H 2D 2S 2C 2C"))
         Assert.assertTrue(regex.matches("3H 3D 3S 3C 3C"))
@@ -37,7 +48,6 @@ class RegularExpressionsTest {
         val regex = RegularExpressions.POKER_HAND.toRegex()
 
         //act
-
         //assert
         Assert.assertFalse(regex.matches(""), "empty")
         Assert.assertFalse(regex.matches("AH"), "1 card")
@@ -54,6 +64,9 @@ class RegularExpressionsTest {
         Assert.assertFalse(regex.matches("AH AD ASAC WQ" ), "missing space 1")
         Assert.assertFalse(regex.matches("AH AD AS ACWQ" ), "missing space 1")
         Assert.assertFalse(regex.matches("AH AD AS , AC"), "special characters")
+        Assert.assertFalse(regex.matches("aH AD AS AC AC"), "lowercase value")
+        Assert.assertFalse(regex.matches("Ah AD AS AC AC"), "lowercase suit")
+        Assert.assertFalse(regex.matches("AH AD AS AC AC AC"), "6 cards")
 
     }
 }

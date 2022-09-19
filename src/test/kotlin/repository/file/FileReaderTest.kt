@@ -1,6 +1,7 @@
 package repository.file
 
 import exceptions.Exceptions
+import exceptions.ExceptionsTests
 import org.testng.Assert
 import org.testng.annotations.Test
 import java.util.concurrent.CountDownLatch
