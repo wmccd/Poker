@@ -21,7 +21,7 @@ class PokerHandCreator {
     private fun convertToPokerHand(rawHand: String): PokerHand{
 
         if(rawHand.length != RAW_STRING_LENGTH){
-            throw Exception("${Exceptions.PokerHandExceptions.INVALID_HAND}<$rawHand>")
+            throw Exception("${Exceptions.PokerHandExceptions.INVALID_HAND}")
         }
 
         val pokerCards = hashSetOf<PokerCard>()
@@ -33,7 +33,7 @@ class PokerHandCreator {
         }
 
         if(pokerCards.size < PokerConstants.PokerHand.CARD_IN_A_HAND){
-            throw Exception("${Exceptions.PokerHandExceptions.INVALID_HAND}<$rawHand>")
+            throw Exception("${Exceptions.PokerHandExceptions.INVALID_HAND}")
         }
 
         return PokerHand(pokerCards)

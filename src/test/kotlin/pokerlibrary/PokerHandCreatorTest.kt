@@ -17,7 +17,7 @@ class PokerHandCreatorTest {
         val rawHand = ""
         val countDownLatch = CountDownLatch(1)
         val expectedCount = 0L
-        val expectedMessage = "${Exceptions.PokerHandExceptions.INVALID_HAND}<${rawHand}>"
+        val expectedMessage = "${Exceptions.PokerHandExceptions.INVALID_HAND}"
 
         //act
         try{
@@ -41,7 +41,7 @@ class PokerHandCreatorTest {
         val rawHand = "1234567890ABC"
         val countDownLatch = CountDownLatch(1)
         val expectedCount = 0L
-        val expectedMessage = "${Exceptions.PokerHandExceptions.INVALID_HAND}<${rawHand}>"
+        val expectedMessage = "${Exceptions.PokerHandExceptions.INVALID_HAND}"
 
         //act
         try{
@@ -65,7 +65,7 @@ class PokerHandCreatorTest {
         val rawHand = "1234567890ABCYZ"
         val countDownLatch = CountDownLatch(1)
         val expectedCount = 0L
-        val expectedMessage = "${Exceptions.PokerHandExceptions.INVALID_HAND}<${rawHand}>"
+        val expectedMessage = "${Exceptions.PokerHandExceptions.INVALID_HAND}"
 
         //act
         try{
@@ -132,7 +132,7 @@ class PokerHandCreatorTest {
         val rawHand = "2H 2H 3H 4H 5H"
         val countDownLatch = CountDownLatch(1)
         val expectedCount = 0L
-        val expectedMessage = "${Exceptions.PokerHandExceptions.INVALID_HAND}<${rawHand}>"
+        val expectedMessage = "${Exceptions.PokerHandExceptions.INVALID_HAND}"
 
         //act
         try{

@@ -5,7 +5,7 @@ import org.testng.Assert
 import org.testng.annotations.Test
 import java.util.concurrent.CountDownLatch
 
-class FileExceptionsReaderTest {
+class FileReaderTest {
 
     @Test
     fun fileOpen_badName_fileDoesNotExistException() {
@@ -36,7 +36,7 @@ class FileExceptionsReaderTest {
 
         //assemble
         val fileReader = FileReader()
-        val filename = "./resources/empty.txt"
+        val filename = "./src/test/resources/empty.txt"
         val expectedMessage = "${Exceptions.FileExceptions.FILE_IS_EMPTY}<$filename>"
         val expectedCount = 0L
         val countDownLatch = CountDownLatch(1)
@@ -60,7 +60,7 @@ class FileExceptionsReaderTest {
 
         //assemble
         val fileReader = FileReader()
-        val filename = "./resources/single.txt"
+        val filename = "./src/test/resources/single.txt"
         val expectedSize = 1
         val expectedLine = "Bobbins"
         var actual = arrayListOf<String>()
@@ -82,7 +82,7 @@ class FileExceptionsReaderTest {
 
         //assemble
         val fileReader = FileReader()
-        val filename = "./resources/multiple.txt"
+        val filename = "./src/test/resources/multiple.txt"
         val expectedSize = 3
         val expectedLine0 = "The"
         val expectedLine1 = "Mighty"
