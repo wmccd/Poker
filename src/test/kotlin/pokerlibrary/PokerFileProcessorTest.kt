@@ -7,6 +7,36 @@ import java.util.concurrent.CountDownLatch
 class PokerFileProcessorTest {
 
     @Test
+    fun process_emptyFile_failure(){
+
+        //assemble
+        val pokerFileProcessor = PokerFileProcessor()
+        val filename = "./src/test/resources/does_not_exist.txt"
+        val countDownLatch = CountDownLatch(1)
+        val expectedCount = 0L
+        val expectedMessage = "FILE ISSUE: File does not exist<${filename}>"
+
+        fun success(result: String){
+            Assert.fail("Unexpectedly in success block")
+        }
+        fun failure(message: String){
+            //assert
+            Assert.assertEquals(message, expectedMessage)
+
+            countDownLatch.countDown()
+        }
+
+        //act
+        pokerFileProcessor.process(
+            filename = filename,
+            success = ::success,
+            failure = ::failure
+        )
+
+        //assert
+        Assert.assertEquals(countDownLatch.count, expectedCount)
+    }
+    @Test
     fun process_fileWithValidHand_success(){
 
         //assemble
