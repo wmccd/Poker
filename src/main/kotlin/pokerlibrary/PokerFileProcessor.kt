@@ -48,6 +48,4 @@ class PokerFileProcessor {
         val fileReader = FileReader()
         return fileReader.read(filename)
     }
-
-
 }

@@ -24,9 +24,4 @@ class FileReader {
 
         return lineList
     }
-
-
-
-
-
 }

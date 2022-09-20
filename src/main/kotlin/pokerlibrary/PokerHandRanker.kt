@@ -136,5 +136,4 @@ class PokerHandRanker {
         return "$highCard High"
     }
 
-
 }
