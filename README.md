@@ -1,7 +1,7 @@
 
 ## POKER FACE  
 
-####A little commentary on the solution
+#### A little commentary on the solution
 
 Below are some screenshots that show the output, the test coverage and the passing tests. 
 
